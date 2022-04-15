@@ -1,0 +1,1093 @@
+[
+    {
+      "name": "OT_None",
+      "operator": 0,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_Input",
+      "operator": 1,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_Conv",
+      "operator": 2,
+      "category": "Layer",
+      "bytes":108,
+      "attributes": [
+        { "name": "num_outputs", "type": "int32", "default": 0 },
+        { "name": "kernel_t", "type": "int32", "default": 0 },
+        { "name": "kernel_h", "type": "int32", "default": 0 },
+        { "name": "kernel_w", "type": "int32", "default": 0 },
+        { "name": "stride_t", "type": "int32", "default": 0 },
+        { "name": "stride_h", "type": "int32", "default": 0},
+        { "name": "stride_w", "type": "int32", "default": 0},
+        { "name": "pad_before", "type": "int32", "default": 0 },
+        { "name": "pad_after", "type": "int32", "default": 0 },
+        { "name": "pad_top", "type": "int32", "default": 0 },
+        { "name": "pad_bottom", "type": "int32", "default": 0 },
+        { "name": "pad_left", "type": "int32", "default": 0 },
+        { "name": "pad_right", "type": "int32", "default": 0 },
+        { "name": "group", "type": "int32", "default": 0 },
+        { "name": "dilatedRate_t", "type": "int32", "default": 0 },
+        { "name": "dilatedRate_h", "type": "int32", "default": 0 },
+        { "name": "dilatedRate_w", "type": "int32", "default": 0 },
+        { "name": "num_outputs_origin", "type": "int32", "default": 0 },
+        { "name": "convolution_type", "type": "ConvolutionMode", "default": 0 },
+        { "name": "dw_activation_type", "type": "ActivationMode", "default": 0 },
+        { "name": "pw_activation_type", "type": "ActivationMode", "default": 0 },
+        { "name": "activation_spec", "type": "float32[]", "capacity":2, "default": 0 },
+        { "name": "round_mode", "type": "RoundMode", "default": 0 },
+        { "name": "output_pad_t", "type": "int32", "default": 0 },
+        { "name": "output_pad_h", "type": "int32", "default": 0 },
+        { "name": "output_pad_w", "type": "int32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Deconvolution",
+      "operator": 3,
+      "category": "Layer",
+      "bytes":108,
+      "attributes": [
+        { "name": "num_outputs", "type": "int32", "default": 0 },
+        { "name": "kernel_t", "type": "int32", "default": 0 },
+        { "name": "kernel_h", "type": "int32", "default": 0 },
+        { "name": "kernel_w", "type": "int32", "default": 0 },
+        { "name": "stride_t", "type": "int32", "default": 0 },
+        { "name": "stride_h", "type": "int32", "default": 0},
+        { "name": "stride_w", "type": "int32", "default": 0},
+        { "name": "pad_before", "type": "int32", "default": 0 },
+        { "name": "pad_after", "type": "int32", "default": 0 },
+        { "name": "pad_top", "type": "int32", "default": 0 },
+        { "name": "pad_bottom", "type": "int32", "default": 0 },
+        { "name": "pad_left", "type": "int32", "default": 0 },
+        { "name": "pad_right", "type": "int32", "default": 0 },
+        { "name": "group", "type": "int32", "default": 0 },
+        { "name": "dilatedRate_t", "type": "int32", "default": 0 },
+        { "name": "dilatedRate_h", "type": "int32", "default": 0 },
+        { "name": "dilatedRate_w", "type": "int32", "default": 0 },
+        { "name": "num_outputs_origin", "type": "int32", "default": 0 },
+        { "name": "convolution_type", "type": "ConvolutionMode", "default": 0 },
+        { "name": "dw_activation_type", "type": "ActivationMode", "default": 0 },
+        { "name": "pw_activation_type", "type": "ActivationMode", "default": 0 },
+        { "name": "activation_spec", "type": "float32[]", "capacity":2, "default": 0 },
+        { "name": "round_mode", "type": "RoundMode", "default": 0 },
+        { "name": "output_pad_t", "type": "int32", "default": 0 },
+        { "name": "output_pad_h", "type": "int32", "default": 0 },
+        { "name": "output_pad_w", "type": "int32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_FC",
+      "operator": 4,
+      "category": "Layer",
+      "bytes":136,
+      "attributes": [
+        { "name": "num_outputs", "type": "int32", "default": 0 },
+        { "name": "num_slices", "type": "int32", "visible":false, "default": 0 },
+        { "name": "slice_point", "type": "int32[]", "capacity": 32, "length": "num_slices", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_RNN",
+      "operator": 5,
+      "category": "Layer",
+      "bytes":36,
+      "attributes": [
+        { "name": "mode", "type": "RNNMode", "default": 0 },
+        { "name": "num_outputs", "type": "int32", "default": 0 },
+        { "name": "steps", "type": "int32", "default": 0 },
+        { "name": "num_projection", "type": "int32", "default": 0 },
+        { "name": "zoneout_cell", "type": "float32", "default": 0 },
+        { "name": "zoneout_output", "type": "float32", "default": 0 },
+        { "name": "bi_direction", "type": "bool", "default": 0 },
+        { "name": "forget_bias", "type": "float32", "default": 0 },
+        { "name": "activation_type", "type": "ActivationMode", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_MatMul",
+      "operator": 6,
+      "category": "Layer",
+      "bytes":4,
+      "attributes": [
+        { "name": "transpose_a", "type": "bool", "default": 0 },
+        { "name": "transpose_b", "type": "bool", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Resize",
+      "operator": 7,
+      "category": "Layer",
+      "bytes":44,
+      "attributes": [
+        { "name": "sizes", "type": "int32[]", "capacity": 2, "length": "num_sizes", "default": 0 },
+        { "name": "scales", "type": "float32[]", "capacity": 4, "length": "num_scales", "default": 0 },
+        { "name": "num_sizes", "type": "int32", "visible":false, "default": 0 },
+        { "name": "num_scales", "type": "int32", "visible":false, "default": 0 },
+        { "name": "mode", "type": "ResizeMode", "default": 0 },
+        { "name": "trans_mode", "type": "CoordinateTransMode", "default": 0 },
+        { "name": "round_mode", "type": "RoundMode", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_BilateralSliceApply",
+      "operator": 8,
+      "category": "Layer",
+      "bytes":12,
+      "attributes": [
+        { "name": "coefficient", "type": "int32", "default": 0 },
+        { "name": "mode", "type": "BilateralSliceApplyMode", "default": 0 },
+        { "name": "has_offset", "type": "bool", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Pooling",
+      "operator": 9,
+      "category": "Layer",
+      "bytes":60,
+      "attributes": [
+        { "name": "kernel_t", "type": "int32", "default": 0 },
+        { "name": "kernel_h", "type": "int32", "default": 0 },
+        { "name": "kernel_w", "type": "int32", "default": 0 },
+        { "name": "stride_t", "type": "int32", "default": 0 },
+        { "name": "stride_h", "type": "int32", "default": 0 },
+        { "name": "stride_w", "type": "int32", "default": 0 },
+        { "name": "pad_before", "type": "int32", "default": 0 },
+        { "name": "pad_after", "type": "int32", "default": 0 },
+        { "name": "pad_top", "type": "int32", "default": 0 },
+        { "name": "pad_bottom", "type": "int32", "default": 0 },
+        { "name": "pad_left", "type": "int32", "default": 0 },
+        { "name": "pad_right", "type": "int32", "default": 0 },
+        { "name": "round_mode", "type": "RoundMode", "default": 0 },
+        { "name": "mode", "type": "PoolingMode", "default": 0 },
+        { "name": "count_include_pad", "type": "bool", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Scale",
+      "operator": 10,
+      "category": "Layer",
+      "bytes":8,
+      "attributes": [
+        { "name": "axis", "type": "int32", "default": 0 },
+        { "name": "num_concat", "type": "int32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_PRelu",
+      "operator": 11,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_BatchNorm",
+      "operator": 12,
+      "category": "Layer",
+      "bytes":16,
+      "attributes": [
+        { "name": "axis", "type": "int32", "default": 0 },
+        { "name": "eps", "type": "float32", "default": 0 },
+        { "name": "gama", "type": "float32", "default": 0 },
+        { "name": "momentum", "type": "float32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_LayerNorm",
+      "operator": 13,
+      "category": "Layer",
+      "bytes":8,
+      "attributes": [
+        { "name": "axis", "type": "int32", "default": 0 },
+        { "name": "eps", "type": "float32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_L2Normalization",
+      "operator": 14,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_Reduction",
+      "operator": 15,
+      "category": "Layer",
+      "bytes":48,
+      "attributes": [
+        { "name": "axes", "type": "int32[]", "capacity": 8, "length": "num_axes", "default": 0 },
+        { "name": "num_axes", "type": "int32", "visible":false, "default": 0 },
+        { "name": "mode", "type": "ReductionMode", "default": 0 },
+        { "name": "coeff", "type": "float32", "default": 0 },
+        { "name": "keep_dim", "type": "bool", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_ArgMax",
+      "operator": 16,
+      "category": "Layer",
+      "bytes":4,
+      "attributes": [
+        { "name": "axis", "type": "int32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Softmax",
+      "operator": 17,
+      "category": "Layer",
+      "bytes":4,
+      "attributes": [
+        { "name": "axis", "type": "int32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_SoftmaxWithLoss",
+      "operator": 18,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_LogSoftmax",
+      "operator": 19,
+      "category": "Layer",
+      "bytes":4,
+      "attributes": [
+        { "name": "axis", "type": "int32", "default": 0 }
+      ]
+    },
+    
+    {
+      "name": "OT_Clip",
+      "operator": 20,
+      "category": "Layer",
+      "bytes":8,
+      "attributes": [
+        { "name": "min", "type": "float32", "default": 0 },
+        { "name": "max", "type": "float32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Power",
+      "operator": 21,
+      "category": "Layer",
+      "bytes":12,
+      "attributes": [
+        { "name": "scale", "type": "float32", "default": 0 },
+        { "name": "shift", "type": "float32", "default": 0 },
+        { "name": "power", "type": "float32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Sigmoid",
+      "operator": 22,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_Relu",
+      "operator": 23,
+      "category": "Layer",
+      "bytes":4,
+      "attributes": [
+        { "name": "neg_slope", "type": "float32", "default": 0 }
+      ]
+    },
+  
+  
+    {
+      "name": "OT_Relu6",
+      "operator": 24,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_HSwish",
+      "operator": 25,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_HSigmoid",
+      "operator": 26,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_Gelu",
+      "operator": 27,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_TanH",
+      "operator": 28,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_Mish",
+      "operator": 29,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_Erf",
+      "operator": 30,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_Gather",
+      "operator": 31,
+      "category": "Layer",
+      "bytes":84,
+      "attributes": [
+        { "name": "data_desc", "type": "TensorDesc", "default": 0 },
+        { "name": "index_desc", "type": "TensorDesc", "default": 0 },
+        { "name": "axis", "type": "int32", "default": 0 },
+        { "name": "index_scalar", "type": "bool", "default": 0 },
+        { "name": "element_level", "type": "bool", "default": 0 },
+        { "name": "batch_dims", "type": "int32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Embedding",
+      "operator": 32,
+      "category": "Layer",
+      "bytes":16,
+      "attributes": [
+        { "name": "num_inputs", "type": "int32", "default": 0 },
+        { "name": "num_outputs", "type": "int32", "default": 0 },
+        { "name": "bias_term", "type": "bool", "default": 0 },
+        { "name": "transpose", "type": "bool", "default": 0 },
+        { "name": "axis", "type": "int32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Pad",
+      "operator": 33,
+      "category": "Layer",
+      "bytes":40,
+      "attributes": [
+        { "name": "before", "type": "int32", "default": 0 },
+        { "name": "after", "type": "int32", "default": 0 },
+        { "name": "front", "type": "int32", "default": 0 },
+        { "name": "back", "type": "int32", "default": 0 },
+        { "name": "top", "type": "int32", "default": 0 },
+        { "name": "bottom", "type": "int32", "default": 0 },
+        { "name": "left", "type": "int32", "default": 0 },
+        { "name": "right", "type": "int32", "default": 0 },
+        { "name": "constant_value", "type": "float32", "default": 0 },
+        { "name": "pad_mode", "type": "PadMode", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Eltwise",
+      "operator": 34,
+      "category": "Layer",
+      "bytes":52,
+      "attributes": [
+        { "name": "mode", "type": "EltwiseMode", "default": 0 },
+        { "name": "coeff", "type": "float32[]", "capacity": 8, "length": "num_coeff", "default": 0 },
+        { "name": "num_coeff", "type": "int32", "visible":false, "default": 0 },
+        { "name": "activation_type", "type": "ActivationMode", "default": 0 },
+        { "name": "activation_spec", "type": "float32[]", "capacity":2, "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Concat",
+      "operator": 35,
+      "category": "Layer",
+      "bytes":8,
+      "attributes": [
+        { "name": "axis", "type": "int32", "default": 0 },
+        { "name": "num_concat", "type": "int32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Slice",
+      "operator": 36,
+      "category": "Layer",
+      "bytes":40,
+      "attributes": [
+        { "name": "slice_points", "type": "int32[]", "capacity": 8, "length": "slice_size", "default": 0 },
+        { "name": "num_slice", "type": "int32", "visible":false, "default": 0 },
+        { "name": "axis", "type": "int32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_TfSlice",
+      "operator": 37,
+      "category": "Layer",
+      "bytes":140,
+      "attributes": [
+        { "name": "begin", "type": "int32[]", "capacity": 8, "length": "dim_size", "default": 0 },
+        { "name": "end", "type": "int32[]", "capacity": 8, "length": "dim_size", "default": 0 },
+        { "name": "strides", "type": "int32[]", "capacity": 8, "length": "dim_size", "default": 0 },
+        { "name": "begin_mask", "type": "int8[]", "capacity": 8, "length": "dim_size", "default": 0 },
+        { "name": "end_mask", "type": "int8[]", "capacity": 8, "length": "dim_size", "default": 0 },
+        { "name": "ellipsis_mask", "type": "int8[]", "capacity": 8, "length": "dim_size", "default": 0 },
+        { "name": "new_axis_mask", "type": "int8[]", "capacity": 8, "length": "dim_size", "default": 0 },
+        { "name": "shrink_axis_mask", "type": "int8[]", "capacity": 8, "length": "dim_size", "default": 0 },
+        { "name": "num_dims", "type": "int32", "visible":false, "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Cast",
+      "operator": 38,
+      "category": "Layer",
+      "bytes":4,
+      "attributes": [
+        { "name": "dt", "type": "int32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Shape",
+      "operator": 39,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_ConstantOfShape",
+      "operator": 40,
+      "category": "Layer",
+      "bytes":8,
+      "attributes": [
+        { "name": "dt", "type": "int32", "default": 0 },
+        { "name": "value", "type": "float32", "default": 0}
+      ]
+    },
+  
+    {
+      "name": "OT_Transpose",
+      "operator": 41,
+      "category": "Layer",
+      "bytes":40,
+      "attributes": [
+        { "name": "axes", "type": "int32[]", "capacity": 8, "length": "num_axes", "default": 0 },
+        { "name": "num_axes", "type": "int32", "visible":false, "default": 0 },
+        { "name": "dt", "type": "int32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Reshape",
+      "operator": 42,
+      "category": "Layer",
+      "bytes":44,
+      "attributes": [
+        { "name": "shape", "type": "int32[]", "capacity": 8, "length": "num_shape", "default": 0 },
+        { "name": "num_shape", "type": "int32", "visible":false, "default": 0 },
+        { "name": "axis", "type": "int32", "default": 0 },
+        { "name": "num_axes", "type": "int32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Squeeze",
+      "operator": 43,
+      "category": "Layer",
+      "bytes":36,
+      "attributes": [
+        { "name": "axes", "type": "int32[]", "capacity": 8, "length": "num_axes", "default": 0 },
+        { "name": "num_axes", "type": "int32", "visible":false, "default": 0}
+      ]
+    },
+  
+    {
+      "name": "OT_Unsqueeze",
+      "operator": 44,
+      "category": "Layer",
+      "bytes":36,
+      "attributes": [
+        { "name": "axes", "type": "int32[]", "capacity": 8, "length": "num_axes", "default": 0 },
+        { "name": "num_axes", "type": "int32", "visible":false, "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Space2Depth",
+      "operator": 45,
+      "category": "Layer",
+      "bytes":4,
+      "attributes": [
+        { "name": "block_size", "type": "int32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Depth2Space",
+      "operator": 46,
+      "category": "Layer",
+      "bytes":12,
+      "attributes": [
+        { "name": "block_size", "type": "int32", "visible":false, "default": 0 },
+        { "name": "mode", "type": "int8[]", "capacity": 8, "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Constant",
+      "operator": 47,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_ChannelResize",
+      "operator": 48,
+      "category": "Layer",
+      "bytes":140,
+      "attributes": [
+        { "name": "symmetric", "type": "char[]", "capacity": 128, "default": 0 },
+        { "name": "group", "type": "int32", "default": 0 },
+        { "name": "channel_before", "type": "int32", "default": 0 },
+        { "name": "channel_after", "type": "int32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_PreAllocatedMemory",
+      "operator": 49,
+      "category": "Layer",
+      "bytes":40,
+      "attributes": [
+        { "name": "desc", "type": "TensorDesc", "default": 0 },
+        { "name": "value", "type": "float32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_SharedWeight",
+      "operator": 50,
+      "category": "Layer",
+      "bytes":36,
+      "attributes": [
+        { "name": "desc", "type": "TensorDesc", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Copy",
+      "operator": 51,
+      "category": "Layer",
+      "bytes":28,
+      "attributes": [
+        { "name": "src_dims", "type": "int32[]", "capacity": 3, "length": "length", "default": 0 },
+        { "name": "dst_dims", "type": "int32[]", "capacity": 3, "length": "length", "default": 0 },
+        { "name": "length", "type": "int32", "visible":false, "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Check",
+      "operator": 52,
+      "category": "Layer",
+      "bytes":4,
+      "attributes": [
+        { "name": "mode", "type": "CheckMode", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Repeat",
+      "operator": 53,
+      "category": "Layer",
+      "bytes":8,
+      "attributes": [
+        { "name": "loops", "type": "int32", "default": 0 },
+        { "name": "axis", "type": "int32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Jump",
+      "operator": 54,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_Attention",
+      "operator": 55,
+      "category": "Layer",
+      "bytes":12,
+      "attributes": [
+        { "name": "num_heads", "type": "int32", "default": 0 },
+        { "name": "from_sequence_length", "type": "int32", "default": 0 },
+        { "name": "to_sequence_length", "type": "int32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_AttentionMask",
+      "operator": 56,
+      "category": "Layer",
+      "bytes":12,
+      "attributes": [
+        { "name": "attention_length", "type": "int32", "default": 0 },
+        { "name": "mask", "type": "float32", "default": 0 },
+        { "name": "same_length", "type": "bool", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_RelativePositionEmbedding",
+      "operator": 57,
+      "category": "Layer",
+      "bytes":16,
+      "attributes": [
+        { "name": "num_inputs", "type": "int32", "default": 0 },
+        { "name": "num_outputs", "type": "int32", "default": 0 },
+        { "name": "bias_term", "type": "bool", "default": 0 },
+        { "name": "transpose", "type": "bool", "default": 0 },
+        { "name": "axis", "type": "int32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_RelativeShift",
+      "operator": 58,
+      "category": "Layer",
+      "bytes":8,
+      "attributes": [
+        { "name": "axis", "type": "int32", "default": 0 },
+        { "name": "shift_length", "type": "int32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_PriorBox",
+      "operator": 59,
+      "category": "Layer",
+      "bytes":68,
+      "attributes": [
+        { "name": "min_sizes", "type": "float32[]", "capacity": 2, "default": 0 },
+        { "name": "max_sizes", "type": "float32[]", "capacity": 2, "default": 0 },
+        { "name": "aspect_ratios", "type": "float32[]", "capacity": 2, "default": 0 },
+        { "name": "flip", "type": "int32", "default": 0 },
+        { "name": "clip", "type": "int32", "default": 0 },
+        { "name": "variances", "type": "float32[]", "capacity": 4, "default": 0 },
+        { "name": "image_h", "type": "int32", "default": 0 },
+        { "name": "image_w", "type": "int32", "default": 0 },
+        { "name": "step_h", "type": "float32", "default": 0 },
+        { "name": "step_w", "type": "float32", "default": 0 },
+        { "name": "offset", "type": "float32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_DetectionOutput",
+      "operator": 60,
+      "category": "Layer",
+      "bytes":20,
+      "attributes": [
+        { "name": "num_class", "type": "int32", "default": 0 },
+        { "name": "nms_threshold", "type": "float32", "default": 0 },
+        { "name": "nms_top_k", "type": "int32", "default": 0 },
+        { "name": "keep_top_k", "type": "int32", "default": 0 },
+        { "name": "confidence_threshold", "type": "float32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Yolov3DetectionOutput",
+      "operator": 61,
+      "category": "Layer",
+      "bytes":140,
+      "attributes": [
+        { "name": "num_class", "type": "int32", "default": 0 },
+        { "name": "num_box", "type": "int32", "default": 0 },
+        { "name": "confidence_threshold", "type": "float32", "default": 0 },
+        { "name": "nms_threshold", "type": "float32", "default": 0 },
+        { "name": "biases", "type": "float32[]", "capacity": 18, "default": 0 },
+        { "name": "anchors_scale", "type": "int32[]", "capacity": 3, "default": 0 },
+        { "name": "mask_group_num", "type": "int32", "default": 0 },
+        { "name": "mask", "type": "int32[]", "capacity": 9, "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_MultiHeadAttention",
+      "operator": 62,
+      "category": "Layer",
+      "bytes":1116
+    },
+  
+    {
+      "name": "OT_SqDiff",
+      "operator": 63,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_Tile",
+      "operator": 64,
+      "category": "Layer",
+      "bytes":40,
+      "attributes": [
+        { "name": "repeats", "type": "int32[]", "capacity": 8, "length": "num_repeats", "default": 0 },
+        { "name": "num_repeats", "type": "int32", "visible":false, "default": 0 },
+        { "name": "axis", "type": "int32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Splice",
+      "operator": 65,
+      "category": "Layer",
+      "bytes":44,
+      "attributes": [
+        { "name": "context", "type": "int32[]", "capacity": 8, "length": "num_context", "default": 0 },
+        { "name": "num_context", "type": "int32", "visible":false, "default": 0 },
+        { "name": "index_min", "type": "int32", "default": 0 },
+        { "name": "index_max", "type": "int32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Neg",
+      "operator": 66,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_Greater",
+      "operator": 67,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_Where",
+      "operator": 68,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_SoftPlus",
+      "operator": 69,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_Exp",
+      "operator": 70,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_OneHot",
+      "operator": 71,
+      "category": "Layer",
+      "bytes":16,
+      "attributes": [
+        { "name": "axis", "type": "int32", "default": 0 },
+        { "name": "depth", "type": "int32", "default": 0 },
+        { "name": "values", "type": "float32[]", "capacity": 2, "default": 0 }
+      ]
+      
+    },
+  
+    {
+      "name": "OT_Tdnn",
+      "operator": 72,
+      "category": "Layer",
+      "bytes":52,
+      "attributes": [
+        { "name": "context", "type": "int32", "capacity": 8, "length": "num_context", "default": 0 },
+        { "name": "num_context", "type": "int32", "visible":false, "default": 0 },
+        { "name": "num_outputs", "type": "int32", "default": 0 },
+        { "name": "activation_type", "type": "ActivationMode", "default": 0 },
+        { "name": "activation_spec", "type": "float32[]", "capacity": 2, "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Dropout",
+      "operator": 73,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_TopK",
+      "operator": 74,
+      "category": "Layer",
+      "bytes":16,
+      "attributes": [
+        { "name": "axis", "type": "int32", "default": 0 },
+        { "name": "largest", "type": "int32", "default": 0 },
+        { "name": "sorted", "type": "int32", "default": 0 },
+        { "name": "k", "type": "int32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_SpaceToBatchNd",
+      "operator": 75,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_BatchToSpaceNd",
+      "operator": 76,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_Abs",
+      "operator": 77,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_Equal",
+      "operator": 78,
+      "category": "Layer",
+      "bytes":1,
+      "attributes": [
+        { "name": "invert", "type": "bool", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Sign",
+      "operator": 79,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_HSwishNoDiv",
+      "operator": 80,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_InstanceNorm",
+      "operator": 81,
+      "category": "Layer",
+      "bytes":12,
+      "attributes": [
+        { "name": "eps", "type": "float32", "default": 0 },
+        { "name": "axis", "type": "int32", "default": 0 },
+        { "name": "axis_dim", "type": "int32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Expand",
+      "operator": 82,
+      "category": "Layer",
+      "bytes":36,
+      "attributes": [
+        { "name": "shape", "type": "int32[]", "capacity": 8, "length": "num_shape", "default": 0 },
+        { "name": "num_shape", "type": "int32", "visible":false, "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Scatter",
+      "operator": 83,
+      "category": "Layer",
+      "bytes":112,
+      "attributes": [
+        { "name": "data_desc", "type": "TensorDesc", "default": 0 },
+        { "name": "index_desc", "type": "TensorDesc", "default": 0 },
+        { "name": "update_desc", "type": "TensorDesc", "default": 0 },
+        { "name": "axis", "type": "int32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_Select",
+      "operator": 84,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_Not",
+      "operator": 85,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_Reciprocal",
+      "operator": 86,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_Log",
+      "operator": 87,
+      "category": "Layer"
+    },
+  
+    {
+      "name": "OT_GenerateProposals",
+      "operator": 88,
+      "category": "Layer",
+      "bytes":40,
+      "attributes": [
+        { "name": "angle_bound_hi", "type": "int32", "default": 0 },
+        { "name": "angle_bound_lo", "type": "int32", "default": 0 },
+        { "name": "angle_bound_on", "type": "int32", "default": 0 },
+        { "name": "clip_angle_thresh", "type": "float32", "default": 0 },
+        { "name": "legacy_plus_one", "type": "int32", "default": 0 },
+        { "name": "min_size", "type": "float32", "default": 0 },
+        { "name": "nms_thresh", "type": "float32", "default": 0 },
+        { "name": "post_nms_topN", "type": "int32", "default": 0 },
+        { "name": "pre_nms_topN", "type": "int32", "default": 0 },
+        { "name": "spatial_scale", "type": "float32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_RoIAlign",
+      "operator": 89,
+      "category": "Layer",
+      "bytes":24,
+      "attributes": [
+        { "name": "trans_mode", "type": "CoordinateTransMode", "default": 0 },
+        { "name": "mode", "type": "PoolingMode", "default": 0 },
+        { "name": "output_h", "type": "int32", "default": 0 },
+        { "name": "output_w", "type": "int32", "default": 0 },
+        { "name": "sampling_ratio", "type": "int32", "default": 0 },
+        { "name": "spatial_scale", "type": "float32", "default": 0 }
+      ]
+    },
+  
+    {
+      "name": "OT_GAT",
+      "operator": 90,
+      "category": "Layer",
+      "bytes":24,
+      "attributes": [
+        { "name": "num_heads", "type": "int32", "default": 0 },
+        { "name": "activation_mode", "type": "ActivationMode", "default": 0 },
+        { "name": "activation_value", "type": "float32[]", "capacity": 4, "default": 0 }
+      ]
+    },
+
+    {
+      "name": "OT_QuantizeLinear",
+      "operator": 91,
+      "category": "Layer",
+      "bytes":8,
+      "attributes": [
+        { "name": "axis", "type": "int32", "default": 0 },
+        { "name": "dt", "type": "int32", "default": 0 }
+      ]
+    },
+
+    {
+      "name": "OT_Round",
+      "operator": 92,
+      "category": "Layer"
+    },
+
+    {
+      "name": "OT_Floor",
+      "operator": 93,
+      "category": "Layer"
+    },
+
+    {
+      "name": "OT_Ceil",
+      "operator": 94,
+      "category": "Layer"
+    },
+
+    {
+      "name": "OT_RandomUniform",
+      "operator": 95,
+      "category": "Layer",
+      "bytes":52,
+      "attributes": [
+        { "name": "dt", "type": "int32", "default": 0 },
+        { "name": "low", "type": "float32", "default": 0 },
+        { "name": "high", "type": "float32", "default": 0 },
+        { "name": "seed", "type": "float32", "default": 0 },
+        { "name": "shape", "type": "int32[]", "capacity": 8, "length": "num_shape", "default": 0 },
+        { "name": "num_shape", "type": "int32", "default": 0 }
+      ]
+    },
+
+    {
+      "name": "OT_CumSum",
+      "operator": 96,
+      "category": "Layer",
+      "bytes":4,
+      "attributes": [
+        { "name": "exclusive", "type": "bool", "default": 0 },
+        { "name": "reverse", "type": "bool", "default": 0 },
+        { "name": "axis", "type": "bool", "default": 0 }
+      ]
+    },
+
+    {
+      "name": "OT_GridSample",
+      "operator": 97,
+      "category": "Layer",
+      "bytes":16,
+      "attributes": [
+        { "name": "model", "type": "ResizeMode", "default": 0 },
+        { "name": "pad_mode", "type": "PadMode", "default": 0 },
+        { "name": "constant_value", "type": "float32", "default": 0 },
+        { "name": "align_corners", "type": "bool", "default": 0 }
+      ]
+    },
+
+    {
+      "name": "OT_NonMaxSuppression",
+      "operator": 98,
+      "category": "Layer",
+      "bytes":16,
+      "attributes": [
+        { "name": "center_point_box", "type": "int32", "default": 0 },
+        { "name": "max_output_boxes_per_class", "type": "int32", "default": 0 },
+        { "name": "iou_threshold", "type": "float32", "default": 0 },
+        { "name": "score_threshold", "type": "float32", "default": 0 }
+      ]
+    },
+
+    {
+      "name": "OT_Range",
+      "operator": 99,
+      "category": "Layer",
+      "bytes":16,
+      "attributes": [
+        { "name": "dt", "type": "int32", "default": 0 },
+        { "name": "start", "type": "float32", "default": 0 },
+        { "name": "limit", "type": "float32", "default": 0 },
+        { "name": "delta", "type": "float32", "default": 0 }
+      ]
+    },
+
+    {
+      "name": "OT_Swish",
+      "operator": 100,
+      "category": "Layer"
+    }
+  ]
