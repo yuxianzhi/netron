@@ -263,6 +263,9 @@ text.Reader = class {
             if (c === '\n') {
                 break;
             }
+            if (c === '\0') {
+                break;
+            }
             line += c;
             if (line.length >= 32) {
                 buffer = buffer || [];
